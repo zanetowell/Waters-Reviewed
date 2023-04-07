@@ -7,20 +7,18 @@
     <title>Waters: Reviewed</title>
 </head>
 <nav>
-    <a href="/new">Create Water</a>
+    <a href="/">Home</a>
 </nav>
 <body>
     <div class="container">
         <h1>water</h1>
-        <% for( let i = 0; i < waters.length; i++ ) { %>
-            <div class="water-container">
-                <a href="/<%= waters[i]._id %>">
-                <img src="<%= waters[i].img %>" height="200px" width="200px">
-                <p><%= waters[i].name %></p>
-            </a>
-            </div>
-        <% } %>
-
+        <form action="/" method="POST">
+            <input type="text" name="name"><br />
+            <input type="text" name="img"><br />
+            <textarea name="description"></textarea><br />
+            <input type="text" name="type"><br />
+            <input type="submit" value="Add Water">
+        </form>
     </div>
 </body>
 <footer>

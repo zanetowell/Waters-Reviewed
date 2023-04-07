@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<nav>
+    <a href="/">Home</a>
+</nav>
+<body>
+    <div class="container">
+        <aside>
+            <img src="<%= water.img %>" class="show-water" height="600px" width="600px">
+        </aside>
+        <main>
+            <h2 class="water-name"><%= water.name %></h2>
+            <span class="water-type"><%= water.type %></span><br />
+            <p class="water-description"><%= water.description %></p>
+        </main>
+    </div>
+</body>
+</html>

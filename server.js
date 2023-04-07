@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const app = express();
-PORT = 3000
+
 require('dotenv').config();
 
 // Database Configuration
@@ -15,7 +15,7 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Middlewares
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 
 // Controllers
@@ -33,6 +33,8 @@ app.use('/', waterController)
 //     res.render('index.ejs')
 // })
 
+// Listener
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
 });
