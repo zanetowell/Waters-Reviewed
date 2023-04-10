@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const app = express();
+const session = require('express-session')
 
 require('dotenv').config();
 
@@ -17,11 +18,22 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false
+    }));
 
 // Controllers
 const waterController = require('./controllers/water')
 app.use('/', waterController)
 
+const userController = require('./controllers/users')
+app.use('/users', userController)
+
+const sessionsController = require('./controllers/sessions')
+app.use('/sessions', sessionsController)
 
 // const articlesController = require('./controllers/articles.js');
 // app.use('/articles', articlesController);

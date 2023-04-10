@@ -1,0 +1,19 @@
+// Dependencies
+const bcrypt = require('bcrypt');
+const express = require('express');
+const userRouter = express.Router();
+const User = require('../models/users.js');
+
+// New (registration page)
+
+// Create (registration route)
+userRouter.post('/', (req, res) => {
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+
+    const createdUser = new User(req.body)
+    createdUser.save().then(res.redirect('/'))
+});
+// Create (registration route)
+
+// Export User Router
+module.exports = userRouter;
