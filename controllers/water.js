@@ -2,6 +2,10 @@ const express = require('express');
 const Water = require('../models/waters');
 const router = express.Router();
 
+
+
+
+
 // Index
 router.get('/',  async (req, res) => {
     const foundWaters = await Water.find({})
@@ -37,6 +41,12 @@ router.post('/', (req, res) => {
     createdWater.save().then(res.redirect('/'))
 })
 
+// router.post('/:id/reviews', (req, res) => {
+//     const reviews = Water.reviews
+//     const addReview = new (req.body)
+//         addReview.save().then(res.redirect('/:id'))
+// })
+
 // // Edit
 // router.get('/:id/edit', async (req, res) => {
 //     const foundArticle = await Article.findById(req.params.id)
@@ -49,7 +59,8 @@ router.post('/', (req, res) => {
 router.get('/:id', async(req, res) => {
     const water = await Water.findById(req.params.id).exec()
     res.render('show.ejs', {
-        water
+        water,
+        currentUser: req.session.currentUser
     })
 })
 

@@ -37,23 +37,26 @@ app.use('/users', userController)
 const sessionsController = require('./controllers/sessions')
 app.use('/sessions', sessionsController)
 
+const reviewsController = require('./controllers/reviews')
+app.use('/', reviewsController)
+
 // const articlesController = require('./controllers/articles.js');
 // app.use('/articles', articlesController);
 
 // INDUCES
 
 // // Index
-app.get('/', (req, res) => {
-	if (req.session.currentUser) {
-		res.render('dashboard.ejs', {
-			currentUser: req.session.currentUser
-		});
-	} else {
-		res.render('index.ejs', {
-			currentUser: req.session.currentUser
-		});
-	}
-});
+// app.get('/', (req, res) => {
+// 	if (req.session.currentUser) {
+// 		res.render('dashboard.ejs', {
+// 			currentUser: req.session.currentUser
+// 		});
+// 	} else {
+// 		res.render('index.ejs', {
+// 			currentUser: req.session.currentUser
+// 		});
+// 	}
+// });
 
 // Listener
 const PORT = process.env.PORT
