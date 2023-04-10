@@ -6,6 +6,8 @@ const session = require('express-session')
 
 require('dotenv').config();
 
+let currentUser = 
+
 // Database Configuration
 mongoose.connect(process.env.DATABASE_URL);
 
@@ -41,9 +43,17 @@ app.use('/sessions', sessionsController)
 // INDUCES
 
 // // Index
-// app.get('/', (req, res) => {
-//     res.render('index.ejs')
-// })
+app.get('/', (req, res) => {
+	if (req.session.currentUser) {
+		res.render('dashboard.ejs', {
+			currentUser: req.session.currentUser
+		});
+	} else {
+		res.render('index.ejs', {
+			currentUser: req.session.currentUser
+		});
+	}
+});
 
 // Listener
 const PORT = process.env.PORT

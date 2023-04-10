@@ -6,7 +6,8 @@ const router = express.Router();
 router.get('/',  async (req, res) => {
     const foundWaters = await Water.find({})
 	res.render('index.ejs', {
-        waters: foundWaters
+        waters: foundWaters,
+        currentUser: req.session.currentUser
     })
 });
 
