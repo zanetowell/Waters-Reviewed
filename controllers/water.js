@@ -2,10 +2,6 @@ const express = require('express');
 const Water = require('../models/waters');
 const router = express.Router();
 
-
-
-
-
 // Index
 router.get('/',  async (req, res) => {
     const foundWaters = await Water.find({})
@@ -34,18 +30,22 @@ router.get('/new', (req, res) => {
 //     )
 //     res.redirect('/articles')
 // })
-
-// Create 
-router.post('/', (req, res) => {
-    const createdWater = new Water(req.body)
-    createdWater.save().then(res.redirect('/'))
+router.put('/:id/reviews', async(req, res) => {
+    let reviewObject = req.body
+    const {id} = req.params
+    await Water.findOneAndUpdate(
+        { _id: id }, 
+        { $push: { reviews: reviewObject } }, 
+        { new: true }
+    ); 
+    res.redirect('/:id')
 })
-
-// router.post('/:id/reviews', (req, res) => {
-//     const reviews = Water.reviews
-//     const addReview = new (req.body)
-//         addReview.save().then(res.redirect('/:id'))
+// Create 
+// router.post('/', (req, res) => {
+//     const createdWater = new Water(req.body)
+//     createdWater.save().then(res.redirect('/'))
 // })
+
 
 // // Edit
 // router.get('/:id/edit', async (req, res) => {

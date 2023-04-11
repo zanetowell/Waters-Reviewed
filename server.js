@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-const app = express();
+const app = express()
 const session = require('express-session')
 
 require('dotenv').config();
@@ -37,11 +37,9 @@ app.use('/users', userController)
 const sessionsController = require('./controllers/sessions')
 app.use('/sessions', sessionsController)
 
-const reviewsController = require('./controllers/reviews')
-app.use('/', reviewsController)
+// const reviewsController = require('./controllers/reviews')
+// app.use('/', reviewsController)
 
-// const articlesController = require('./controllers/articles.js');
-// app.use('/articles', articlesController);
 
 // INDUCES
 
