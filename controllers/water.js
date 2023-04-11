@@ -13,23 +13,25 @@ router.get('/',  async (req, res) => {
 
 // New
 router.get('/new', (req, res) => {
-	res.render('new.ejs');
+	res.render('new.ejs', {
+        currentUser: req.session.currentUser
+    });
 });
 
 // // Delete
-// router.delete('/:id', async (req,res) => {
-//     await Article.findByIdAndRemove(req.params.id)
-//     res.redirect('/articles')
-// })
+router.delete('/:id', async (req,res) => {
+    await Water.findByIdAndRemove(req.params.id)
+    res.redirect('/')
+})
 
 // // Update
-// router.put('/:id', async (req, res) => {
-//     await Article.findByIdAndUpdate(
-//         req.params.id,
-//         req.body,
-//     )
-//     res.redirect('/articles')
-// })
+router.put('/:id', async (req, res) => {
+    await Water.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+    )
+    res.redirect('/')
+})
 router.put('/:id/reviews', async(req, res) => {
     let reviewObject = req.body
     const {id} = req.params
@@ -40,20 +42,32 @@ router.put('/:id/reviews', async(req, res) => {
     ); 
     res.redirect('/:id')
 })
+
+router.put('/:id/reviews/:id', async(req, res) => {
+    let reviewObject = req.body
+    const {id} = req.params
+    await Water.findOneAndUpdate(
+        { 'reviews._id': id }, 
+        { $set: { 'reviews.$.content': reviewObject } }, 
+        { new: true }
+    ); 
+    res.redirect('/:id')
+})
 // Create 
-// router.post('/', (req, res) => {
-//     const createdWater = new Water(req.body)
-//     createdWater.save().then(res.redirect('/'))
-// })
+router.post('/', (req, res) => {
+    const createdWater = new Water(req.body)
+    createdWater.save().then(res.redirect('/'))
+})
 
 
 // // Edit
-// router.get('/:id/edit', async (req, res) => {
-//     const foundArticle = await Article.findById(req.params.id)
-//     res.render('articles/edit.ejs', {
-//         article: foundArticle
-//     })
-// })
+router.get('/:id/edit', async (req, res) => {
+    const foundWater = await Water.findById(req.params.id)
+    res.render('edit.ejs', {
+        water: foundWater,
+        currentUser: req.session.currentUser
+    })
+})
 
 // Show
 router.get('/:id', async(req, res) => {

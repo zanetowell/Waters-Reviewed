@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
 const reviewSchema = new Schema({
+    user: { type: String },
     content: { type: String},
     rating: { type: Number, min: 1, max: 10, default: 5}
 },

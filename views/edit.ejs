@@ -7,17 +7,17 @@
     <title>Waters: Reviewed</title>
 </head>
 <nav>
-    <a href="/">Home</a>
+    <%- include('./partials/nav.ejs')  %>
 </nav>
 <body>
     <div class="container">
-        <h1>water</h1>
-        <form action="/" method="POST">
-            <input type="text" name="name"><br />
-            <input type="text" name="img"><br />
-            <textarea name="description"></textarea><br />
-            <input type="text" name="type"><br />
-            <input type="submit" value="Add Water">
+        <h1>Edit the Water</h1>
+        <form action="/<%= water._id %>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="<%= water.name %>"><br />
+            Image: <input type="text" name="img" value="<%= water.img %>"><br />
+            Description: <textarea name="description" value="<%= water.description %>"></textarea><br />
+            Type of Water: <input type="text" name="type" value="<%= water.type %>"><br />
+            <input type="submit" value="Submit Changes">
         </form>
     </div>
 </body>
