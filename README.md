@@ -6,31 +6,38 @@ A fully functional CRUD App that allows users to look at different bottled water
 
 ## Techonologies used
 
-1.HTML  
+- HTML  
 
-2.CSS  
+- CSS  
 
-3.JavaScript  
+- JavaScript  
 
-4.Node.JS  
+- Node.JS  
 
-5.EJS  
+- EJS  
 
-6.MongoDB Atlas / Mongoose  
+- MongoDB Atlas / Mongoose  
 
-7.Bcrypt / Express Session
+- Bcrypt / Express Session
 
 
 ## Screenshots  
 
+![Index/Landing Page!](/imgs/Screenshot%202023-04-12%20at%205.36.26%20PM.png)  
+
+![Show Page!](/imgs/Screenshot%202023-04-12%20at%205.37.07%20PM.png)  
 
 ## Getting Started  
-  
+[Deployed Project](https://waters-reviewed.herokuapp.com/)  
+
+Feel free to browse the various waters but you'll need to register and log in if you want to add any entries or leave a review!  
 
 ## Future Enhancements  
-  
+- Allow users to search for specific waters  
+
+- Allow users to edit and delete reviews they've made  
 
 ## Credits  
 
-*LinkedIn Logo* - https://brand.linkedin.com/downloads  
+*[Favicon](https://icons8.com/icon/MjnUAlvdgBSR/water)*
 

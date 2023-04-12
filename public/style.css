@@ -47,24 +47,18 @@ body {
     font-style: italic;
     font-size: 40px;
     position: absolute;
-    right: 50%;
-    top: 5px;
+    right: 45%;
+    top: 0;
     color: white;
 }
 
 .directions {
     font-family: 'Dosis', sans-serif;
     font-style: italic;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 6%;
-    flex-wrap: wrap;
     font-size: 22px;
-    left: 20px;
-    top: 40vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
 
 .container {
@@ -74,7 +68,7 @@ body {
     justify-content: center;
     height: 80vh;
     width: 80vw;
-    margin: 150px auto;
+    margin: auto;
     padding: 1em;
     gap: 15px;
     background: rgb(53,97,180);
@@ -175,7 +169,15 @@ body {
     width: 5%;
     padding: 1px 9px;
     justify-content: center;
+    transition: all .1s ease-in-out;
+}
 
+.edit-btn:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.delete-btn {
+    cursor: pointer;
 }
 
 .forms-container {
@@ -211,4 +213,10 @@ label, textarea {
 
 .forms textarea {
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .jumbotron {
+        display: none;
+    }
 }
