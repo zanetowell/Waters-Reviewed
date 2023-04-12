@@ -18,6 +18,8 @@ A fully functional CRUD App that allows users to look at different bottled water
 
 6.MongoDB Atlas / Mongoose  
 
+7.Bcrypt / Express Session
+
 
 ## Screenshots  
 
@@ -29,3 +31,6 @@ A fully functional CRUD App that allows users to look at different bottled water
   
 
 ## Credits  
+
+*LinkedIn Logo* - https://brand.linkedin.com/downloads  
+

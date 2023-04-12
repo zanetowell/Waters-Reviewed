@@ -1,4 +1,5 @@
 nav {
+    font-family: 'Karla', sans-serif;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -23,22 +24,47 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* .account {
-    float: right;
-} */
+.account {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 18px;
+    font-family: 'Karla', sans-serif;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+}
 
 body {
-    background-color: whitesmoke;
-    font-family: 'Dosis', sans-serif;
-    overflow: hidden;
+    background-color: white;
+    font-family: 'Karla', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .jumbotron {
+    font-family: 'Dosis', sans-serif;
+    font-style: italic;
     position: relative;
     top: 15vh;
-    left: 5vw;
+    left: 20px;
     width: 5vw;
     font-size: 40px;
+}
+
+.directions {
+    font-family: 'Dosis', sans-serif;
+    font-style: italic;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6%;
+    flex-wrap: wrap;
+    font-size: 22px;
+    left: 20px;
+    top: 40vh;
 }
 
 .container {
@@ -46,13 +72,17 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    height: 70vh;
+    height: 80vh;
     width: 80vw;
     margin: 50px auto;
     padding: 1em;
-    gap: 10px;
-    background-color: antiquewhite;
+    gap: 15px;
+    background: rgb(53,97,180);
+    background: linear-gradient(68deg, rgba(53,97,180,1) 24%, rgba(0,212,255,1) 88%);
     overflow-y: auto;
+    border-radius: 20px;
+    border-bottom: 3px solid #1C335F;
+    border-right: 3px solid #1C335F;
 }
 
 .water-container {
@@ -62,22 +92,106 @@ body {
     align-items: center;
     background-color: white;
     padding-top: 15px;
-    border-radius: 5px;
-    border: 2px solid black;
+    height: 40%;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+    font-weight: bold;
+    transition: all .1s ease-in-out;
+}
+
+.water-container:hover {
+    transform: scale(1.1);
 }
 
 .water-container a {
     text-decoration: none;
     font-size: 1.5em;
+    color: #3cc6ed;
 }
 
 .water-container a:hover {
     text-decoration: underline;
 }
 
-footer {
-    height: 5vh;
+.show-container {
+    display: flex;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-water {
+    width: 50%;
+}
+
+.show-article {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.show-article h2 {
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+.show-article span {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.show-article p {
+    font-size: 35px;
+}
+
+.reviews {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+}
+
+.reviews h2 {
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.reviews table {
+    border-collapse: separate;
+    border-spacing: 30px 10px;
+}
+
+.divider {
+    width: 70%;
+    height: 2px;
+    background-color: black;
+}
+
+.edit-btn {
+    display: flex;
+    text-decoration: none;
+    border: 1px solid rgb(98, 98, 98);
+    border-radius: 3px;
+    color: black;
+    background-color: rgb(239, 239, 239);
+    width: 5%;
+    padding: 1px 9px;
+    justify-content: center;
+
+}
+
+.forms-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 60vh;
+    width: 80vw;
+    margin: 150px auto;
+    background: rgb(53,97,180);
+    background: linear-gradient(68deg, rgba(53,97,180,1) 24%, rgba(0,212,255,1) 88%);
+    overflow-y: auto;
+    border-radius: 20px;
+    border-bottom: 3px solid #1C335F;
+    border-right: 3px solid #1C335F;
 }
