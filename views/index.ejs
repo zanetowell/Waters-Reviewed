@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waters: Reviewed</title>
+    <%- include('./partials/head.ejs')  %>
 </head>
 <nav>
     <%- include('./partials/nav.ejs')  %>
 </nav>
 <body>
+    <h1 class="jumbotron">Water</h1>
     <div class="container">
-        <h1>water</h1>
         <% for( let i = 0; i < waters.length; i++ ) { %>
             <div class="water-container">
                 <a href="/<%= waters[i]._id %>">
                 <img src="<%= waters[i].img %>" height="200px" width="200px">
-                <p><%= waters[i].name %></p>
-            </a>
+                </a>
+                <a href="/<%= waters[i]._id %>">
+                <p id="containerp"><%= waters[i].name %></p>
+                </a>
             </div>
         <% } %>
 
     </div>
 </body>
 <footer>
-
+    <h5>Created By: Zane Towell</h5>
 </footer>
 </html>

@@ -1,0 +1,83 @@
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #1C335F;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* .account {
+    float: right;
+} */
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Dosis', sans-serif;
+    overflow: hidden;
+}
+
+.jumbotron {
+    position: relative;
+    top: 15vh;
+    left: 5vw;
+    width: 5vw;
+    font-size: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 70vh;
+    width: 80vw;
+    margin: 50px auto;
+    padding: 1em;
+    gap: 10px;
+    background-color: antiquewhite;
+    overflow-y: auto;
+}
+
+.water-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.water-container a {
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.water-container a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    height: 5vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

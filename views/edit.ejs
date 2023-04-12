@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waters: Reviewed</title>
+    <%- include('./partials/head.ejs')  %>
 </head>
 <nav>
     <%- include('./partials/nav.ejs')  %>
@@ -12,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Edit the Water</h1>
+        <div class="forms">
         <form action="/<%= water._id %>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value="<%= water.name %>"><br />
             Image: <input type="text" name="img" value="<%= water.img %>"><br />
@@ -19,6 +17,7 @@
             Type of Water: <input type="text" name="type" value="<%= water.type %>"><br />
             <input type="submit" value="Submit Changes">
         </form>
+        </div>
     </div>
 </body>
 <footer>
