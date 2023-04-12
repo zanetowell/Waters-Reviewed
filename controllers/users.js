@@ -19,7 +19,5 @@ userRouter.post('/', (req, res) => {
     createdUser.save().then(res.redirect('/'))
 });
 
-// Create (registration route)
-
 // Export User Router
 module.exports = userRouter;

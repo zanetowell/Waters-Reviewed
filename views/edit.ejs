@@ -11,10 +11,14 @@
         <h1>Edit the Water</h1>
         <div class="forms">
         <form action="/<%= water._id %>?_method=PUT" method="POST">
-            Name: <input type="text" name="name" value="<%= water.name %>"><br />
-            Image: <input type="text" name="img" value="<%= water.img %>"><br />
-            Description: <textarea name="description" value="<%= water.description %>"></textarea><br />
-            Type of Water: <input type="text" name="type" value="<%= water.type %>"><br />
+            <label for = "name">
+            Name: <input type="text" name="name" value="<%= water.name %>"></label>
+            <label for = "img">
+            Image: <input type="text" name="img" value="<%= water.img %>"></label>
+            <label for = "description">
+            Description: <textarea name="description" value="<%= water.description %>"></textarea><br /></label>
+            <label for = "type">
+            Type of Water: <input type="text" name="type" value="<%= water.type %>"><br /></label>
             <input type="submit" value="Submit Changes">
         </form>
         </div>

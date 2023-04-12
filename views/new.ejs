@@ -7,14 +7,14 @@
     <%- include('./partials/nav.ejs')  %>
 </nav>
 <body>
-    <div class="container">
+    <div class="forms-container">
         <h1>water</h1>
         <div class="forms">
         <form action="/" method="POST">
-            <input type="text" name="name" required><br />
-            <input type="text" name="img" required><br />
-            <textarea name="description"></textarea><br />
-            <input type="text" name="type"><br />
+            Name: <input type="text" name="name" required><br />
+            Img: <input type="text" name="img" required><br />
+            Description: <textarea name="description"></textarea><br />
+            Type of Water: <input type="text" name="type"><br />
             <input type="submit" value="Add Water">
         </form>
         </div>

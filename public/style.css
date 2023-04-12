@@ -45,11 +45,11 @@ body {
 .jumbotron {
     font-family: 'Dosis', sans-serif;
     font-style: italic;
-    position: relative;
-    top: 15vh;
-    left: 20px;
-    width: 5vw;
     font-size: 40px;
+    position: absolute;
+    right: 50%;
+    top: 5px;
+    color: white;
 }
 
 .directions {
@@ -74,7 +74,7 @@ body {
     justify-content: center;
     height: 80vh;
     width: 80vw;
-    margin: 50px auto;
+    margin: 150px auto;
     padding: 1em;
     gap: 15px;
     background: rgb(53,97,180);
@@ -194,4 +194,21 @@ body {
     border-radius: 20px;
     border-bottom: 3px solid #1C335F;
     border-right: 3px solid #1C335F;
+    color: white;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+label, input {
+    display: block;
+}
+
+label, textarea {
+    display: block;
+}
+
+.forms textarea {
+    margin-bottom: 10px;
 }
