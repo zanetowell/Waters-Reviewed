@@ -4,7 +4,7 @@ A fully functional CRUD App that allows users to look at different bottled water
 
 ## Created by: Zane Towell
 
-## Techonologies used
+## Technologies used
 
 - HTML  
 
