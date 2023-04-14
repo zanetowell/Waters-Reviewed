@@ -5,7 +5,7 @@ const router = express.Router();
 // Index
 router.get('/',  async (req, res) => {
     const foundWaters = await Water.find({})
-	res.render('index.ejs', {
+	res.render('waters/index.ejs', {
         waters: foundWaters,
         currentUser: req.session.currentUser
     })
@@ -13,57 +13,48 @@ router.get('/',  async (req, res) => {
 
 // New
 router.get('/new', (req, res) => {
-	res.render('new.ejs', {
+	res.render('waters/new.ejs', {
         currentUser: req.session.currentUser
     });
 });
 
-// // Delete
+//  Delete
 router.delete('/:id', async (req,res) => {
     await Water.findByIdAndRemove(req.params.id)
-    res.redirect('/')
+    res.redirect('/water')
 })
 
-// // Update
+//  Update
 router.put('/:id', async (req, res) => {
     await Water.findByIdAndUpdate(
         req.params.id,
         req.body,
     )
-    res.redirect('/')
+    res.redirect('/water')
 })
+
+// Update/Add Review
 router.put('/:id/reviews', async(req, res) => {
     let reviewObject = req.body
     const {id} = req.params
     await Water.findOneAndUpdate(
         { _id: id }, 
         { $push: { reviews: reviewObject } }, 
-        { new: true }
-    ); 
-    res.redirect('/:id')
+        { new: true },
+    ) 
+    res.redirect('/water')
 })
 
-router.put('/:id/reviews/:id', async(req, res) => {
-    let reviewObject = req.body
-    const {id} = req.params
-    await Water.findOneAndUpdate(
-        { 'reviews._id': id }, 
-        { $set: { 'reviews.$.content': reviewObject } }, 
-        { new: true }
-    ); 
-    res.redirect('/:id')
-})
 // Create 
 router.post('/', (req, res) => {
     const createdWater = new Water(req.body)
-    createdWater.save().then(res.redirect('/'))
+    createdWater.save().then(res.redirect('/water'))
 })
 
-
-// // Edit
+// Edit
 router.get('/:id/edit', async (req, res) => {
     const foundWater = await Water.findById(req.params.id)
-    res.render('edit.ejs', {
+    res.render('waters/edit.ejs', {
         water: foundWater,
         currentUser: req.session.currentUser
     })
@@ -72,7 +63,7 @@ router.get('/:id/edit', async (req, res) => {
 // Show
 router.get('/:id', async(req, res) => {
     const water = await Water.findById(req.params.id).exec()
-    res.render('show.ejs', {
+    res.render('waters/show.ejs', {
         water,
         currentUser: req.session.currentUser
     })

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('./partials/head.ejs')  %>
+  <%- include('../partials/head.ejs')  %>
 </head>
 <nav>
-    <%- include('./partials/nav.ejs')  %>
+    <%- include('../partials/nav.ejs')  %>
 </nav>
 <body>
     <div class="show-container">
@@ -16,8 +16,8 @@
             <span class="water-type"><%= water.type %></span><br />
             <p class="water-description"><%= water.description %></p>
             <% if (currentUser) { %>
-             <a href="/<%= water._id %>/edit" class="edit-btn">EDIT</a>
-             <form action="/<%= water.id %>?_method=DELETE" method="POST">
+             <a href="/water/<%= water._id %>/edit" class="edit-btn">EDIT</a>
+             <form action="/water/<%= water.id %>?_method=DELETE" method="POST">
               <input type="submit" value="DELETE" class="delete-btn"/>
               </form>
             <% } %>
@@ -27,7 +27,7 @@
         <h2>Reviews</h2>
         <div class="divider"></div> <br />
         <% if (currentUser) { %>
-<form id="add-review-form" action="/<%= water._id %>/reviews?_method=PUT" method="POST">
+<form id="add-review-form" action="/water/<%= water._id %>/reviews?_method=PUT" method="POST">
  <label>Review:</label>
  <textarea name="content"></textarea>
  <label>Rating:</label>
@@ -66,7 +66,7 @@
       </tbody>
     </table>
   <% } else { %>
-    <h5>No Reviews Yet</h5>
+    <h4>No Reviews Yet</h4>
   <% } %>
     </div>
 </body>

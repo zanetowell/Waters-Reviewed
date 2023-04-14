@@ -215,6 +215,32 @@ label, textarea {
     margin-bottom: 10px;
 }
 
+.intro-container {
+    width: 50vw;
+    height: 50vh;
+    background: rgb(53,97,180);
+    background: radial-gradient(circle, rgba(53,97,180,1) 3%, rgba(29,149,214,1) 29%, rgba(0,228,255,0.9640231092436975) 98%);
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition-duration: 3s;
+    border-radius: 20px;
+}
+
+.intro-container:hover {
+    transform: scale(1.5)
+}
+
+.intro-link {
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
 @media screen and (max-width: 768px){
     .jumbotron {
         display: none;

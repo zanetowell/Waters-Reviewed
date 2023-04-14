@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head.ejs')  %>
+    <%- include('../partials/head.ejs')  %>
 </head>
 <nav>
-    <%- include('./partials/nav.ejs')  %>
+    <%- include('../partials/nav.ejs')  %>
 </nav>
 <body>
     <div class="forms-container">
         <h1>Edit the Water</h1>
         <div class="forms">
-        <form action="/<%= water._id %>?_method=PUT" method="POST">
+        <form action="/water/<%= water._id %>?_method=PUT" method="POST">
             <label for = "name">
             Name: <input type="text" name="name" value="<%= water.name %>"></label>
             <label for = "img">

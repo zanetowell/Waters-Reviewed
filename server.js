@@ -6,7 +6,6 @@ const session = require('express-session')
 
 require('dotenv').config();
 
-let currentUser = 
 
 // Database Configuration
 mongoose.connect(process.env.DATABASE_URL);
@@ -18,7 +17,7 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Middlewares
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'))
 app.use(
     session({
@@ -26,10 +25,12 @@ app.use(
         resave: false,
         saveUninitialized: false
     }))
+
 app.use("/public", express.static('public'))
+
 // Controllers
 const waterController = require('./controllers/water')
-app.use('/', waterController)
+app.use('/water', waterController)
 
 const userController = require('./controllers/users')
 app.use('/users', userController)
@@ -37,24 +38,10 @@ app.use('/users', userController)
 const sessionsController = require('./controllers/sessions')
 app.use('/sessions', sessionsController)
 
-// const reviewsController = require('./controllers/reviews')
-// app.use('/', reviewsController)
-
-
-// INDUCES
-
-// // Index
-// app.get('/', (req, res) => {
-// 	if (req.session.currentUser) {
-// 		res.render('dashboard.ejs', {
-// 			currentUser: req.session.currentUser
-// 		});
-// 	} else {
-// 		res.render('index.ejs', {
-// 			currentUser: req.session.currentUser
-// 		});
-// 	}
-// });
+// Landing Page
+app.get('/',   (req, res) => {
+	res.render('dashboard.ejs')
+})
 
 // Listener
 const PORT = process.env.PORT

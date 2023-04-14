@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head.ejs')  %>
+    <%- include('../partials/head.ejs')  %>
 </head>
 <nav>
-    <%- include('./partials/nav.ejs')  %>
+    <%- include('../partials/nav.ejs')  %>
 </nav>
 <body>
     <div class="forms-container">
         <h1>Add a Water</h1>
         <div class="forms">
-        <form action="/" method="POST">
+        <form action="/water" method="POST">
             Name: <input type="text" name="name" required><br />
             Img: <input type="text" name="img" required><br />
             Description: <textarea name="description"></textarea><br />

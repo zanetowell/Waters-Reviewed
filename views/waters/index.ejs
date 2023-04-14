@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head.ejs')  %>
+    <%- include('../partials/head.ejs')  %>
 </head>
 <nav>
-    <%- include('./partials/nav.ejs')  %>
+    <%- include('../partials/nav.ejs')  %>
 </nav>
 <body>
     <aside class="directions"><p>Take a look at different waters from across the nation and let people know what you think</p></aside>
     <div class="container">
         <% for( let i = 0; i < waters.length; i++ ) { %>
             <div class="water-container">
-                <a href="/<%= waters[i]._id %>">
+                <a href="/water/<%= waters[i]._id %>">
                 <img src="<%= waters[i].img %>" height="200px" width="200px">
                 </a>
-                <a href="/<%= waters[i]._id %>">
+                <a href="/water/<%= waters[i]._id %>">
                 <p id="containerp"><%= waters[i].name %></p>
                 </a>
             </div>
